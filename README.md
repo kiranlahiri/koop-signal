@@ -1,5 +1,8 @@
 # koop-signal
 
+Educational use only. Not investment advice. No warranty.
+
+
 python - << 'PY'
 from src.data.loader import fetch_ohlc
 from src.strategies.sma_crossover import sma_signal
