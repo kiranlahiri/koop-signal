@@ -1,6 +1,42 @@
-.venv/
+cat > .gitignore << 'EOF'
+# --- Python basics ---
 __pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# --- Virtual envs ---
+.venv/
+venv/
+env/
+
+# --- Jupyter ---
 .ipynb_checkpoints/
-*.pyc
-.cache/
-data/
+
+# --- IDE / OS junk ---
+.DS_Store
+.vscode/
+.idea/
+
+# --- Tests / coverage ---
+.pytest_cache/
+.coverage*
+htmlcov/
+
+# --- Ruff / tools ---
+.ruff_cache/
+
+# --- Project data & outputs ---
+data/                 # raw/downloaded/cached data (yfinance, EDGAR)
+assets/*.csv          # generated results
+assets/*.json         # summaries
+assets/*.png          # plots
+assets/*.svg
+!assets/.gitkeep      # keep folder in repo
+EOF
+
+# ensure the folder exists in git even when empty
+mkdir -p assets
+touch assets/.gitkeep
+
